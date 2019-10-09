@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react"
+import axios from 'axios'
 
 /**
  * This component should show some information about a Star Wars character.
@@ -7,9 +8,12 @@ import React, {useEffect, useState} from "react"
  */
 const MyComponent = () => {
     const [name, setName] = useState("Luke");
+    const CHARACTER = 'Luke'
+    const CHARACTER_API_URL=`http://localhost:8080/characters/${CHARACTER}`
+
     useEffect(() => {
         //Call spring back-end
-        setName("Luke")
+        setName(axios.get(`$CHARACTER_API_URL}/`))
     }, []);
 
     return <div>
