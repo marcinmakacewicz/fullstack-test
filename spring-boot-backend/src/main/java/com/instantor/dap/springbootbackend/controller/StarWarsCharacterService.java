@@ -10,7 +10,7 @@ import com.instantor.dap.springbootbackend.model.StarWarsCharacter;
 @Service
 public class StarWarsCharacterService {
 	
-	private static ArrayList<StarWarsCharacter> starWarsCharacters;
+	private static ArrayList<StarWarsCharacter> starWarsCharacters = new ArrayList<>();
 	private static Random randomCharacter = new Random();
 	
 	static {
@@ -20,7 +20,7 @@ public class StarWarsCharacterService {
 		starWarsCharacters.add(new StarWarsCharacter("Leya"));
 	}
 	
-	public static String getRandomStarWarsCharacterName() {
+	public String getRandomStarWarsCharacterName() {
 		return starWarsCharacters.get( randomCharacter.nextInt(starWarsCharacters.size()) ).getName();
 	}
 }
