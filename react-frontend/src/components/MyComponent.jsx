@@ -8,12 +8,11 @@ import axios from 'axios'
  */
 const MyComponent = () => {
     const [name, setName] = useState("Luke");
-    const CHARACTER = 'Luke'
-    const CHARACTER_API_URL=`http://localhost:8080/characters/${CHARACTER}`
+    const CHARACTER_API_URL=`https://localhost:8080/characters/api/v1/sw/character`
 
     useEffect(() => {
         //Call spring back-end
-        setName(axios.get(`$CHARACTER_API_URL}/`))
+        setName(axios.get(`$CHARACTER_API_URL}`))
     }, []);
 
     return <div>
