@@ -12,8 +12,11 @@ const MyComponent = () => {
 
     useEffect(() => {
         //Call spring back-end
-        setName(axios.get(`$CHARACTER_API_URL}`))
-    }, []);
+        axios.get(`${CHARACTER_API_URL}`)
+            .then(res => {
+                setName(res.data);
+            })
+    });
 
     return <div>
         Name: {name}
